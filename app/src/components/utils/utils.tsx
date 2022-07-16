@@ -1,35 +1,39 @@
-import dataObject from "../models/model";
+import DataObject from "../models/model";
 
-const getTableHeader = (result: dataObject[]) => {
+const getTableHeader = ({ dataGrid: result, handleSort}: {dataGrid: DataObject[]; [key: string]: any}) => {
   const keys = Object.keys(result[0]);
   return (
     <tr>
       {keys.map((item, index) => {
-        return <th key={index}>{item}</th>;
+        return <th key={index} onClick={handleSort(item)}>{item}</th>;
       })}
     </tr>
   );
 };
 
-const getTableRows = (result: dataObject[]) => {
+const getTableRows = ({ dataGrid: result }: {dataGrid: DataObject[]; [key: string]: any}) => {
   const keys = Object.keys(result[0]);
   return result.map((items, i) => {
     return (
       <tr key={i}>
-        {keys.map((item) => {
-          return <td key={items.customerID}>{(items as any)[item]}</td>;
+        {keys.map((item, i) => {
+          return (
+            <td key={i} onClick={handleDoubleClick} onBlur={handleBlur}>
+              {(items as any)[item]}
+            </td>
+          );
         })}
       </tr>
     );
   });
 };
 
-const numOfColumns = (result: dataObject[]) => {
-  return Object.keys(result[0]).length;
+const handleDoubleClick = (e: any) => {
+  e.target.contentEditable = true;
 };
 
-const numOfRows = (result: dataObject[]) => {
-  return getTableRows(result).length;
+const handleBlur = (e: any) => {
+  e.target.contentEditable = false;
 };
 
-export { getTableHeader, getTableRows, numOfRows, numOfColumns };
+export { getTableHeader, getTableRows };

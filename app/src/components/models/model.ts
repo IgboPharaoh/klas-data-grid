@@ -1,4 +1,4 @@
-export default interface dataObject {
+export default interface DataObject {
   orderID: number;
   customerID: string;
   employeeID: number;
@@ -10,7 +10,7 @@ export default interface dataObject {
   shipName: string;
   shipAddress: string;
   shipCity: string;
-  shipRegion: string;
-  shipPostalCode: number;
+  shipRegion: string | null;
+  shipPostalCode: string;
   shipCountry: string;
 }

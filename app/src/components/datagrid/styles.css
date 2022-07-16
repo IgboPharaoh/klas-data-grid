@@ -1,0 +1,42 @@
+.datagrid-wrapper {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+table {
+  width: fit-content;
+  border-right: 0.05rem solid black;
+  border-left: 0.05rem solid black;
+  border-spacing: 0rem;
+}
+
+thead {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: var(--clr-primaryBlue);
+  color: var(--clr-primaryWhite);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+td,
+th {
+  border: 0.05rem solid var(--clr-primaryGrey);
+  text-align: left;
+  padding: 0.8rem;
+}
+td {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+th {
+  border-right: 0.05rem solid var(--clr-primaryGrey);
+}
+.table-warning-text {
+  font-size: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  color: var(--clr-primaryBlue);
+}
