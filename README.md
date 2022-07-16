@@ -20,5 +20,6 @@ Construct a re-usable datagrid component in React supported bv a light-weiaht se
 Please start the server first before the app to be able to see the data and datagrid implementation
 
 
-Start server: yarn dev
+Start server: yarn dev 
+
 Start app(client): yarn start
